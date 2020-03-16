@@ -17,7 +17,7 @@ phases:
       - pytest tests
       - echo "Build started on `date`"
       - echo "Building the Docker image..."
-      - docker build -t hs-main-one .
+      - docker build -t bo-demo-app .
       - docker tag bo-demo-app:latest 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
   post_build:
     commands:
