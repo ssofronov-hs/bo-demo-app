@@ -10,7 +10,7 @@ phases:
       - src_account_id=$(echo $CODEBUILD_BUILD_ARN | cut -d':' -f5)
       - echo "Logging in to the pre_build Amazon ECR in ..."
       - $(aws ecr get-login --no-include-email --registry-ids ${src_account_id} --region "us-east-2")
-      - apt install -y awscli
+      - yum install -y awscli
       - curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator
       - chmod +x ./aws-iam-authenticator
       - mkdir -p ~/bin && cp ./aws-iam-authenticator ~/bin/aws-iam-authenticator && export PATH=~/bin:$PATH
