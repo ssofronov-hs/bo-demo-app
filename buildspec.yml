@@ -7,11 +7,19 @@ phases:
   pre_build:
     commands:
       - echo "Pre build"
+      - src_account_id=$(echo $CODEBUILD_BUILD_ARN | cut -d':' -f5)
+      - echo "Logging in to the pre_build Amazon ECR in ..."
+      - $(aws ecr get-login --no-include-email --registry-ids ${src_account_id} --region "us-east-2")
   build:
     commands:
       - echo "Build started"
       - pip install -r requirements.txt
       - pytest tests
+      - echo "Build started on `date`"
+      - echo "Building the Docker image..."
+      - docker build -t hs-main-one .
+      - docker tag bo-demo-app:latest 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
   post_build:
     commands:
       - echo "Post build"
+      - docker push 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
