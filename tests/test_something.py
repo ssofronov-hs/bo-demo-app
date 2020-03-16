@@ -1,4 +1,4 @@
 def test_something():
     a = True
-    b = False
+    b = True
     assert a == b
