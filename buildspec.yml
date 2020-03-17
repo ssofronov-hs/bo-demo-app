@@ -45,5 +45,4 @@ phases:
       - aws configure set default.region us-east-2
       - aws iam get-user
       - kubectl get nodes
-      - helm uninstall example
-      - helm install example ./bo-demo-chart --set service.type=LoadBalancer
+      - helm upgrade example ./bo-demo-chart --set service.type=LoadBalancer
