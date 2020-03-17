@@ -39,5 +39,8 @@ phases:
       - kubectl config view --minify
       - aws eks update-kubeconfig --name bo-demo-cluster-1 --region us-east-2
       - kubectl config view --minify
+      - aws configure set aws_access_key_id $AWS_ACCESS_KEY
+      - aws configure set aws_secret_access_key $AWS_SECRET_KEY
+      - aws configure set default.region us-east-2
       - aws iam get-user
       - kubectl get nodes
