@@ -35,5 +35,4 @@ phases:
     commands:
       - echo "Post build"
       - docker push 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
-      - aws-iam-authenticator help
-      - kubectl get nodes
+      - aws sts get-caller-identity
