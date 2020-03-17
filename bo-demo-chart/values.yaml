@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
