@@ -34,7 +34,7 @@ phases:
   post_build:
     commands:
       - echo "Post build"
-      - ECHO "Post build 2"
+      - echo "Post build 2"
       - docker push 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
       - aws sts get-caller-identity
       - kubectl config view --minify
