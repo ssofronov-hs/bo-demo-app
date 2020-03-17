@@ -39,3 +39,4 @@ phases:
       - kubectl config view --minify
       - aws eks update-kubeconfig --name bo-demo-cluster-1 --region us-east-2
       - kubectl config view --minify
+      - kubectl get nodes
