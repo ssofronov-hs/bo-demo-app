@@ -37,3 +37,4 @@ phases:
       - docker push 780182659516.dkr.ecr.us-east-2.amazonaws.com/bo-demo-app:latest
       - aws sts get-caller-identity
       - kubectl config view --minify
+      - aws eks update-kubeconfig --name bo-demo-cluster-1 --region us-east-2
