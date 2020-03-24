@@ -46,4 +46,3 @@ phases:
       - kubectl get nodes
       - helm uninstall example
       - helm install example ./bo-demo-chart --set service.type=LoadBalancer --debug
-
